@@ -4,6 +4,33 @@
         <name>NebuloMongo</name>
     </assembly>
     <members>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.CNPJ">
+            <example>12345678000199</example>
+            <remarks>O CNPJ deve conter exatamente 14 dígitos numéricos.</remarks>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.Video">
+            <example>https://www.youtube.com/watch?v=abcd1234</example>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.Name">
+            <example>Nebulo Corp</example>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.Descricao">
+            <remarks>Descrição breve sobre a startup. Máximo recomendado: 500 caracteres.</remarks>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.Site">
+            <example>https://nebulocorp.com</example>
+            <remarks>Endereço oficial do site da startup.</remarks>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.DataCriacao">
+            <example>2025-11-22T14:30:00Z</example>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.Habilidades">
+            <example> [ "IA", "Machine Learning", "Análise de Dados" ]</example>
+        </member>
+        <member name="P:NebuloMongo.Application.DTOs.Request.RequestStartupDto.IdUser">
+            <example>64ena91b92b122bd1acf9f77</example>
+            <remarks>ID do usuário proprietário da startup.</remarks>
+        </member>
         <member name="M:NebuloMongo.API.Controllers.v1.UserController.GetAll(System.Int32,System.Int32)">
             <summary>
             Retorna todos os Users.
@@ -40,6 +67,70 @@
         <member name="M:NebuloMongo.API.Controllers.v2.UserController.DeleteUser(System.String)">
             <summary>
             Deleta um User existente.
+            </summary>
+            <param name="id">ID do registro</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.ReviewController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os Reviews.
+            </summary>
+            <param name="page">Número da página (default = 1)</param>
+            <param name="pageSize">Quantidade de itens por página (default = 10)</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.ReviewController.GetById(System.String)">
+            <summary>
+            Retorna um Review pelo ID.
+            </summary>
+            <param name="id">id do registro</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.ReviewController.PostReview(NebuloMongo.Application.DTOs.Request.RequestReviewDto)">
+            <summary>
+            Cria um novo Review.
+            </summary>
+            <param name="request">Payload para criação</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.ReviewController.PutReview(System.String,NebuloMongo.Application.DTOs.Request.RequestReviewDto)">
+            <summary>
+            Atualiza um Usuario existente.
+            </summary>
+            <param name="id">ID do registro</param>
+            <param name="request">Payload para atualização</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.ReviewController.DeleteReview(System.String)">
+            <summary>
+            Deleta um Review existente.
+            </summary>
+            <param name="id">ID do registro</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.StartupController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os Startups.
+            </summary>
+            <param name="page">Número da página (default = 1)</param>
+            <param name="pageSize">Quantidade de itens por página (default = 10)</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.StartupController.GetById(System.String)">
+            <summary>
+            Retorna um Startup pelo ID.
+            </summary>
+            <param name="id">id do registro</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.StartupController.PostStartup(NebuloMongo.Application.DTOs.Request.RequestStartupDto)">
+            <summary>
+            Cria um novo Startup.
+            </summary>
+            <param name="request">Payload para criação</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.StartupController.PutStartup(System.String,NebuloMongo.Application.DTOs.Request.RequestStartupDto)">
+            <summary>
+            Atualiza um Usuario existente.
+            </summary>
+            <param name="id">ID do registro</param>
+            <param name="request">Payload para atualização</param>
+        </member>
+        <member name="M:NebuloMongo.Controllers.v2.StartupController.DeleteStartup(System.String)">
+            <summary>
+            Deleta um Startup existente.
             </summary>
             <param name="id">ID do registro</param>
         </member>

@@ -138,6 +138,7 @@ C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\Nebul
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\NebuloMongo.csproj.CoreCompileInputs.cache
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\NebuloMongo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\NebuloMongo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\NebuloMongo.sourcelink.json
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Passos Magicos\Documents\NebuloMongo\NebuloMongo\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

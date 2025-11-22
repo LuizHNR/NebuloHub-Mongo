@@ -58,10 +58,10 @@ namespace NebuloMongo.Application.UseCase
             return user == null ? null : ResponseUserDto.FromEntity(user);
         }
 
-        public async Task<bool> UpdateUserAsync(string id, RequestUserDto request)
+        public async Task<ResponseUserDto?> UpdateUserAsync(string id, RequestUserDto request)
         {
             var user = await _repository.GetByIdAsync(id);
-            if (user == null) return false;
+            if (user == null) return null;
 
             user.Atualizar(
                 request.Name,
@@ -72,7 +72,7 @@ namespace NebuloMongo.Application.UseCase
             );
 
             await _repository.UpdateAsync(id, user);
-            return true;
+            return ResponseUserDto.FromEntity(user);
         }
 
         public async Task<bool> DeleteUserAsync(string id)

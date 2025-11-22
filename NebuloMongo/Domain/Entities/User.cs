@@ -7,7 +7,6 @@ namespace NebuloMongo.Domain.Entities
 {
     public class User
     {
-        [JsonPropertyOrder(-10)]
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }

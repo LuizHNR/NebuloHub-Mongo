@@ -8,33 +8,33 @@ using NebuloMongo.Application.UseCase;
 using NebuloMongo.Application.Validators;
 using System.Net;
 
-namespace NebuloMongo.API.Controllers.v2
+namespace NebuloMongo.Controllers.v2
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("2.0")]
     [ApiController]
-    [Tags("CRUD User")]
-    public class UserController : ControllerBase
+    [Tags("CRUD Review")]
+    public class ReviewController : ControllerBase
     {
-        private readonly UserUseCase _useCase;
-        private readonly RequestUserValidator _validationUser;
+        private readonly ReviewUseCase _useCase;
+        private readonly RequestReviewValidator _validationReview;
 
         // ILogger
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<ReviewController> _logger;
 
 
-        public UserController(UserUseCase useCase, RequestUserValidator validationUser,
-        ILogger<UserController> logger)
+        public ReviewController(ReviewUseCase useCase, RequestReviewValidator validationReview,
+        ILogger<ReviewController> logger)
         {
             _useCase = useCase;
-            _validationUser = validationUser;
+            _validationReview = validationReview;
             _logger = logger;
         }
 
 
 
         /// <summary>
-        /// Retorna todos os Users.
+        /// Retorna todos os Reviews.
         /// </summary>
         /// <param name="page">Número da página (default = 1)</param>
         /// <param name="pageSize">Quantidade de itens por página (default = 10)</param>
@@ -44,18 +44,17 @@ namespace NebuloMongo.API.Controllers.v2
         {
             try
             {
-                _logger.LogInformation("Iniciando busca de todos os users...");
+                _logger.LogInformation("Iniciando busca de todos os reviews...");
 
-                var users = await _useCase.GetAllUsersAsync(page, pageSize);
+                var reviews = await _useCase.GetAllReviewsAsync(page, pageSize);
 
-                _logger.LogInformation("Busca de usuários concluída. {count} registros encontrados.", users.Count());
+                _logger.LogInformation("Busca de usuários concluída. {count} registros encontrados.", reviews.Count());
 
-                var result = users.Select(d => new
+                var result = reviews.Select(d => new
                 {
                     d.Id,
-                    d.CPF,
-                    d.Name,
-                    d.Email,
+                    d.Rating,
+                    d.UserId,
                     links = new
                     {
                         self = Url.Action(nameof(GetById), new { id = d.Id })
@@ -66,7 +65,7 @@ namespace NebuloMongo.API.Controllers.v2
                 {
                     page,
                     pageSize,
-                    totalItems = users.Count(),
+                    totalItems = reviews.Count(),
                     items = result
                 });
 
@@ -87,30 +86,30 @@ namespace NebuloMongo.API.Controllers.v2
 
 
         /// <summary>
-        /// Retorna um User pelo ID.
+        /// Retorna um Review pelo ID.
         /// </summary>
         /// <param name="id">id do registro</param>
         [Authorize]
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(ResponseUserDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseReviewDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetById(string id)
         {
 
             try
             {
-                _logger.LogInformation("Buscando user com id {id}", id);
+                _logger.LogInformation("Buscando review com id {id}", id);
 
-                var user = await _useCase.GetByIdAsync(id);
-                if (user == null)
+                var review = await _useCase.GetByIdAsync(id);
+                if (review == null)
                 {
-                    _logger.LogWarning("User {id} não encontrado.", id);
+                    _logger.LogWarning("Review {id} não encontrado.", id);
                     return NotFound("Usuário não encontrado.");
 
                 }
 
-                _logger.LogInformation("User {id} encontrado com sucesso.", id);
-                return Ok(user);
+                _logger.LogInformation("Review {id} encontrado com sucesso.", id);
+                return Ok(review);
 
             }
             catch (MongoException ex)
@@ -127,22 +126,22 @@ namespace NebuloMongo.API.Controllers.v2
 
 
         /// <summary>
-        /// Cria um novo User.
+        /// Cria um novo Review.
         /// </summary>
         /// <param name="request">Payload para criação</param>
         [AllowAnonymous]
         [HttpPost]
-        [ProducesResponseType(typeof(ResponseUserDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseReviewDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> PostUser([FromBody] RequestUserDto request)
+        public async Task<IActionResult> PostReview([FromBody] RequestReviewDto request)
         {
 
             try
             {
                 // Valida entrada
-                _validationUser.ValidateAndThrow(request);
+                _validationReview.ValidateAndThrow(request);
 
-                var created = await _useCase.CreateUserAsync(request);
+                var created = await _useCase.CreateReviewAsync(request);
 
                 return CreatedAtAction(nameof(GetById), new { id = created.Id, version = "2" }, created);
 
@@ -176,17 +175,17 @@ namespace NebuloMongo.API.Controllers.v2
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> PutUser(string id, [FromBody] RequestUserDto request)
+        public async Task<IActionResult> PutReview(string id, [FromBody] RequestReviewDto request)
         {
 
             try
             {
-                _logger.LogInformation("Atualizando user {id}", id);
+                _logger.LogInformation("Atualizando review {id}", id);
 
-                var updated = await _useCase.UpdateUserAsync(id, request);
+                var updated = await _useCase.UpdateReviewAsync(id, request);
 
                 if (updated == null)
-                    return NotFound("Usuário não encontrado.");
+                    return NotFound("Review não encontrada.");
 
                 return Ok(updated);
 
@@ -212,19 +211,19 @@ namespace NebuloMongo.API.Controllers.v2
 
 
         /// <summary>
-        /// Deleta um User existente.
+        /// Deleta um Review existente.
         /// </summary>
         /// <param name="id">ID do registro</param>
         [Authorize(Roles = "ADMIN")]
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> DeleteUser(string id)
+        public async Task<IActionResult> DeleteReview(string id)
         {
 
             try
             {
-                var deleted = await _useCase.DeleteUserAsync(id);
+                var deleted = await _useCase.DeleteReviewAsync(id);
                 if (!deleted)
                     return NotFound("Usuário não encontrado.");
 
@@ -233,7 +232,7 @@ namespace NebuloMongo.API.Controllers.v2
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro inesperado ao deletar user.");
+                _logger.LogError(ex, "Erro inesperado ao deletar review.");
                 return StatusCode(500, new { erro = ex.Message });
             }
 

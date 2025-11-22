@@ -76,6 +76,9 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 // ==========================================
 builder.Services.AddScoped<UserUseCase>();
 builder.Services.AddScoped<AuthUseCase>();
+builder.Services.AddScoped<StartupUseCase>();
+builder.Services.AddScoped<ReviewUseCase>();
+
 
 // ==========================================
 // CONTROLLERS
@@ -92,6 +95,8 @@ builder.Services.AddControllers()
 // ==========================================
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<RequestUserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RequestStartupValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RequestReviewValidator>();
 
 // ==========================================
 // SWAGGER

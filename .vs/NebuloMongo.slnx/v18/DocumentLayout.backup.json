@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|c:\\users\\passos magicos\\documents\\nebulomongo\\nebulomongo\\application\\usecase\\reviewusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|solutionrelative:nebulomongo\\application\\usecase\\reviewusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|c:\\users\\passos magicos\\documents\\nebulomongo\\nebulomongo\\application\\dtos\\request\\requeststartupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|solutionrelative:nebulomongo\\application\\dtos\\request\\requeststartupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|c:\\users\\passos magicos\\documents\\nebulomongo\\nebulomongo\\application\\dtos\\request\\requestreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|solutionrelative:nebulomongo\\application\\dtos\\request\\requestreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|c:\\users\\passos magicos\\documents\\nebulomongo\\nebulomongo\\application\\dtos\\request\\requestlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|solutionrelative:nebulomongo\\application\\dtos\\request\\requestlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|c:\\users\\passos magicos\\documents\\nebulomongo\\nebulomongo\\domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B330EF00-BAA3-080C-FC42-3DC8EB61D539}|NebuloMongo\\NebuloMongo.csproj|solutionrelative:nebulomongo\\domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 456,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReviewUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\UseCase\\ReviewUseCase.cs",
+              "RelativeDocumentMoniker": "NebuloMongo\\Application\\UseCase\\ReviewUseCase.cs",
+              "ToolTip": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\UseCase\\ReviewUseCase.cs",
+              "RelativeToolTip": "NebuloMongo\\Application\\UseCase\\ReviewUseCase.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAqwEAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:18:33.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RequestStartupDto.cs",
+              "DocumentMoniker": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestStartupDto.cs",
+              "RelativeDocumentMoniker": "NebuloMongo\\Application\\DTOs\\Request\\RequestStartupDto.cs",
+              "ToolTip": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestStartupDto.cs",
+              "RelativeToolTip": "NebuloMongo\\Application\\DTOs\\Request\\RequestStartupDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:18:24.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RequestReviewDto.cs",
+              "DocumentMoniker": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestReviewDto.cs",
+              "RelativeDocumentMoniker": "NebuloMongo\\Application\\DTOs\\Request\\RequestReviewDto.cs",
+              "ToolTip": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestReviewDto.cs",
+              "RelativeToolTip": "NebuloMongo\\Application\\DTOs\\Request\\RequestReviewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:18:18.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RequestLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestLoginDto.cs",
+              "RelativeDocumentMoniker": "NebuloMongo\\Application\\DTOs\\Request\\RequestLoginDto.cs",
+              "ToolTip": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Application\\DTOs\\Request\\RequestLoginDto.cs",
+              "RelativeToolTip": "NebuloMongo\\Application\\DTOs\\Request\\RequestLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:18:17.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Domain\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "NebuloMongo\\Domain\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\Domain\\Entities\\Review.cs",
+              "RelativeToolTip": "NebuloMongo\\Domain\\Entities\\Review.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:18:09.568Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

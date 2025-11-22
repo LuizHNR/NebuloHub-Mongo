@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NebuloMongo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a28cc356f876b2ae81cdd3ca8eecfac50819d4ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("NebuloMongo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NebuloMongo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

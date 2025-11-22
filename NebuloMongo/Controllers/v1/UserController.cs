@@ -96,7 +96,7 @@ namespace NebuloMongo.API.Controllers.v1
         public async Task<IActionResult> Update(string id, [FromBody] RequestUserDto request)
         {
             var updated = await _useCase.UpdateUserAsync(id, request);
-            if (!updated)
+            if (updated == null)
                 return NotFound("Usuário não encontrado.");
 
             return NoContent();
