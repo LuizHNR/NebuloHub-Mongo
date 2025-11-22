@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NebuloMongo</name>
+    </assembly>
+    <members>
+        <member name="M:NebuloMongo.API.Controllers.v1.UserController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os Users.
+            </summary>
+            <param name="page">Número da página (default = 1)</param>
+            <param name="pageSize">Quantidade de itens por página (default = 10)</param>
+        </member>
+        <member name="M:NebuloMongo.API.Controllers.v2.UserController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Retorna todos os Users.
+            </summary>
+            <param name="page">Número da página (default = 1)</param>
+            <param name="pageSize">Quantidade de itens por página (default = 10)</param>
+        </member>
+        <member name="M:NebuloMongo.API.Controllers.v2.UserController.GetById(System.String)">
+            <summary>
+            Retorna um User pelo ID.
+            </summary>
+            <param name="id">id do registro</param>
+        </member>
+        <member name="M:NebuloMongo.API.Controllers.v2.UserController.PostUser(NebuloMongo.Application.DTOs.Request.RequestUserDto)">
+            <summary>
+            Cria um novo User.
+            </summary>
+            <param name="request">Payload para criação</param>
+        </member>
+        <member name="M:NebuloMongo.API.Controllers.v2.UserController.PutUser(System.String,NebuloMongo.Application.DTOs.Request.RequestUserDto)">
+            <summary>
+            Atualiza um Usuario existente.
+            </summary>
+            <param name="id">ID do registro</param>
+            <param name="request">Payload para atualização</param>
+        </member>
+        <member name="M:NebuloMongo.API.Controllers.v2.UserController.DeleteUser(System.String)">
+            <summary>
+            Deleta um User existente.
+            </summary>
+            <param name="id">ID do registro</param>
+        </member>
+    </members>
+</doc>

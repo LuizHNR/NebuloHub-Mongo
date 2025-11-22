@@ -1,0 +1,6 @@
+@NebuloMongo_HostAddress = http://localhost:5103
+
+GET {{NebuloMongo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
