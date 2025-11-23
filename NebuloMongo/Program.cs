@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 using NebuloMongo.Application.Settings;
 using NebuloMongo.Application.UseCase;
 using NebuloMongo.Application.Validators;
@@ -141,13 +142,34 @@ builder.Services.Configure<MongoSettings>(
 
 builder.Services.AddSingleton<MongoContext>();
 
-// ==========================================
-// HEALTH CHECKS (SEM MONGO)
-// ==========================================
-builder.Services.AddHealthChecks();
 
-builder.Services.AddHealthChecksUI()
-    .AddInMemoryStorage();
+
+
+// ===============================
+// HEALTH CHECKS
+// ===============================
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var settings = builder.Configuration.GetSection("MongoSettings");
+    return new MongoClient(settings["ConnectionString"]);
+});
+
+// HEALTH CHECKS
+builder.Services.AddHealthChecks()
+    .AddMongoDb(
+        sp => sp.GetRequiredService<IMongoClient>(),
+        name: "MongoDB",
+        timeout: TimeSpan.FromSeconds(5)
+    );
+
+builder.Services.AddHealthChecksUI(opt =>
+{
+    opt.SetEvaluationTimeInSeconds(10);
+    opt.MaximumHistoryEntriesPerEndpoint(60);
+    opt.AddHealthCheckEndpoint("API Health", "/health");
+}).AddInMemoryStorage();
+
+
 
 // ==========================================
 // BUILD
@@ -182,16 +204,14 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 
-// JSON do health
 app.MapHealthChecks("/health", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
-// Dashboard UI
 app.MapHealthChecksUI(options =>
 {
-    options.UIPath = "/hc-ui";
+    options.UIPath = "/health-ui";
 });
 
 app.MapControllers();

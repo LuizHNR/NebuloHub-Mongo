@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj": {}
+    "C:\\Users\\Passos Magicos\\Documents\\Luiz\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj": {
+    "C:\\Users\\Passos Magicos\\Documents\\Luiz\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj",
+        "projectUniqueName": "C:\\Users\\Passos Magicos\\Documents\\Luiz\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj",
         "projectName": "NebuloMongo",
-        "projectPath": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj",
+        "projectPath": "C:\\Users\\Passos Magicos\\Documents\\Luiz\\NebuloMongo\\NebuloMongo\\NebuloMongo.csproj",
         "packagesPath": "C:\\Users\\Passos Magicos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Passos Magicos\\Documents\\NebuloMongo\\NebuloMongo\\obj\\",
+        "outputPath": "C:\\Users\\Passos Magicos\\Documents\\Luiz\\NebuloMongo\\NebuloMongo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.MongoDb": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "AspNetCore.HealthChecks.UI": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -88,7 +92,7 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.19.0, )"
+              "version": "[3.5.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
